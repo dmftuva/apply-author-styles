@@ -31,9 +31,9 @@ Polymer('apply-author-styles', {
   },
 
   _isSupportedTag: function(el){
-    if (el.tagName == 'LINK') return true;
-    if (el.tagName == 'STYLE') return true;
-    return false;
+    var tagName = el.tagName.toUpperCase();
+    var f = (tagName == 'LINK') || (tagName == 'STYLE'); //maybe link or LINK
+    return f;
   },
 
   _isFromOriginalAuthorDocument: function(el) {
